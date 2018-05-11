@@ -38,7 +38,7 @@ import routes from '../client/routes';
 import { fetchComponentData } from './util/fetchData';
 import posts from './routes/post.routes';
 import users from './routes/user.routes';
-import pokemons from './routes/pokemon.routes';
+import users from './routes/user.routes';
 import dummyData from './dummyData';
 import serverConfig from './config';
 

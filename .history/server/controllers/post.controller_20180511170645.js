@@ -10,12 +10,16 @@ import sanitizeHtml from 'sanitize-html';
  * @returns void
  */
 export function getPosts(req, res) {
-  Post.find().sort('-dateAdded').exec((err, posts) => {
-    if (err) {
-      res.status(500).send(err);
-    }
-    res.json({ posts });
+  fetch('https://pokeapi.co/api/v2/pokemon?limit=151').then(resp => resp.json()).then(response => {
+    res.json({ species: response.results });
   });
+
+  // Post.find().sort('-dateAdded').exec((err, posts) => {
+  //   if (err) {
+  //     res.status(500).send(err);
+  //   }
+  //   res.json({ posts });
+  // });
 }
 
 /**
